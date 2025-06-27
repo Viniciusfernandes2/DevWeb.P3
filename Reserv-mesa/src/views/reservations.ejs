@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservas</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Lista de Reservas</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Mesa</th>
+        <th>Data/Hora</th>
+        <th>Status</th>
+        <th>Contato</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% reservations.forEach(r => { %>
+        <tr>
+          <td><%= r.customerName %></td>
+          <td><%= r.tableNumber %></td>
+          <td><%= r.reservationDate.toLocaleString() %></td>
+          <td><%= r.status %></td>
+          <td><%= r.contact %></td>
+          <td>
+            <form action="/reservas/<%= r._id %>" method="POST" style="display:inline;">
+              <button type="submit">Atualizar</button>
+            </form>
+            <form action="/reservas/<%= r._id %>/delete" method="POST" style="display:inline;">
+              <button type="submit">Excluir</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <a href="/">Nova Reserva</a>
+</body>
+</html>

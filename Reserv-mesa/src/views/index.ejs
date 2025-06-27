@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Nova Reserva</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Nova Reserva</h1>
+  <form action="/reservas" method="POST">
+    <label>Nome do Cliente: <input type="text" name="customerName" required></label><br>
+    <label>Número da Mesa: <input type="number" name="tableNumber" required></label><br>
+    <label>Data e Hora: <input type="datetime-local" name="reservationDate" required></label><br>
+    <label>Contato: <input type="text" name="contact" required></label><br>
+    <button type="submit">Reservar</button>
+  </form>
+  <a href="/reservas">Ver Reservas</a>
+</body>
+</html>
